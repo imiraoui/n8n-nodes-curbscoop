@@ -1,0 +1,58 @@
+{
+  "name": "n8n-nodes-curbscoop",
+  "version": "0.1.0",
+  "description": "Resolve NYC addresses and research properties with source evidence in n8n",
+  "license": "MIT",
+  "homepage": "https://curbscoop.com",
+  "keywords": [
+    "n8n-community-node-package",
+    "curbscoop"
+  ],
+  "author": {
+    "name": "CurbScoop",
+    "url": "https://curbscoop.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imiraoui/n8n-nodes-curbscoop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imiraoui/n8n-nodes-curbscoop/issues"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "node --test test/*.test.cjs",
+    "prepublishOnly": "npm run lint && npm run build && npm test",
+    "lint:code": "eslint nodes credentials"
+  },
+  "files": [
+    "dist",
+    "examples"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/CurbScoopApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/CurbScoop/CurbScoop.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.56.4",
+    "n8n-workflow": "2.16.0",
+    "typescript": "5.9.3",
+    "eslint": "9.39.4",
+    "prettier": "3.8.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=22.16"
+  }
+}
